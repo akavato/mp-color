@@ -1,0 +1,138 @@
+.react-colorful {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 280px;
+  user-select: none;
+  cursor: default;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.react-colorful__color-type {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 3px 3px 0 0;
+}
+
+.react-colorful__controls {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.react-colorful__eyedropper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 10px 0;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.react-colorful__saturation {
+  position: relative;
+  flex-grow: 1;
+  border-bottom: 6px solid #000;
+  background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0)),
+    linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+}
+
+.react-colorful__pointer-fill,
+.react-colorful__alpha-gradient {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Improve elements rendering on light backgrounds */
+.react-colorful__alpha-gradient,
+.react-colorful__saturation {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.react-colorful__hue,
+.react-colorful__alpha {
+  position: relative;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.react-colorful__hue {
+  margin-bottom: 12px;
+  background: linear-gradient(
+    to right,
+    #f00 0%,
+    #ff0 17%,
+    #0f0 33%,
+    #0ff 50%,
+    #00f 67%,
+    #f0f 83%,
+    #f00 100%
+  );
+}
+
+.react-colorful__interactive {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  outline: none;
+  /* Don't trigger the default scrolling behavior when the event is originating from this element */
+  touch-action: none;
+}
+
+.react-colorful__pointer {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.react-colorful__interactive:focus .react-colorful__pointer {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Chessboard-like pattern for alpha related elements */
+.react-colorful__alpha,
+.react-colorful__alpha-pointer {
+  background-color: #fff;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill-opacity=".05"><rect x="4" width="4" height="4"/><rect y="4" width="4" height="4"/></svg>');
+}
+
+/* Display the saturation pointer over the hue one */
+.react-colorful__saturation-pointer {
+  z-index: 3;
+}
+
+/* Display the hue pointer over the alpha one */
+.react-colorful__hue-pointer {
+  z-index: 2;
+}
+
+#temp-canvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  cursor: url('../components/common/ColorizeIcon.svg') 0 20, crosshair;
+}
