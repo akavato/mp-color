@@ -32,7 +32,7 @@ const SaturationBase = ({ hsva, onChange }: Props) => {
   };
 
   return (
-    <div className="react-colorful__saturation" style={containerStyle}>
+    <div className="mp-color__saturation" style={containerStyle}>
       <Interactive
         onMove={handleMove}
         onKey={handleKey}
@@ -40,7 +40,7 @@ const SaturationBase = ({ hsva, onChange }: Props) => {
         aria-valuetext={`Saturation ${round(hsva.s)}%, Brightness ${round(hsva.v)}%`}
       >
         <Pointer
-          className="react-colorful__saturation-pointer"
+          className="mp-color__saturation-pointer"
           top={1 - hsva.v / 100}
           left={hsva.s / 100}
           color={hsvaToHslString(hsva)}

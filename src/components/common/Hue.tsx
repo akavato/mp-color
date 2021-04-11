@@ -26,7 +26,7 @@ const HueBase = ({ className, hue, onChange }: Props) => {
     });
   };
 
-  const nodeClassName = formatClassName(["react-colorful__hue", className]);
+  const nodeClassName = formatClassName(["mp-color__hue", className]);
 
   return (
     <div className={nodeClassName}>
@@ -37,7 +37,7 @@ const HueBase = ({ className, hue, onChange }: Props) => {
         aria-valuetext={round(hue)}
       >
         <Pointer
-          className="react-colorful__hue-pointer"
+          className="mp-color__hue-pointer"
           left={hue / 360}
           color={hsvaToHslString({ h: hue, s: 100, v: 100, a: 1 })}
         />

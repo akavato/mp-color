@@ -34,11 +34,11 @@ export const Alpha = ({ className, hsva, onChange }: Props): JSX.Element => {
     backgroundImage: `linear-gradient(90deg, ${colorFrom}, ${colorTo})`,
   };
 
-  const nodeClassName = formatClassName(["react-colorful__alpha", className]);
+  const nodeClassName = formatClassName(["mp-color__alpha", className]);
 
   return (
     <div className={nodeClassName}>
-      <div className="react-colorful__alpha-gradient" style={gradientStyle} />
+      <div className="mp-color__alpha-gradient" style={gradientStyle} />
       <Interactive
         onMove={handleMove}
         onKey={handleKey}
@@ -46,7 +46,7 @@ export const Alpha = ({ className, hsva, onChange }: Props): JSX.Element => {
         aria-valuetext={`${round(hsva.a * 100)}%`}
       >
         <Pointer
-          className="react-colorful__alpha-pointer"
+          className="mp-color__alpha-pointer"
           left={hsva.a}
           color={hsvaToHslaString(hsva)}
         />

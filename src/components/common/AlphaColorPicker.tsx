@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Select} from 'antd';
 import { Hue } from "./Hue";
 import { Saturation } from "./Saturation";
 import { Alpha } from "./Alpha";
@@ -28,14 +28,21 @@ export const AlphaColorPicker = <T extends AnyColor>({
 
   const [hsva, updateHsva] = useColorManipulation<T>(colorModel, color, onChange);
 
-  const nodeClassName = formatClassName(["react-colorful", className]);
+  const nodeClassName = formatClassName(["mp-color", className]);
+
+  const {Option} = Select;
 
   return (
     <div {...rest} className={nodeClassName}>
-      <div className='react-colorful__color-type'></div>
+      <div className='mp-color__color-type'>
+      <Select defaultValue="solid" style={{width: 110}} bordered={false}>
+        <Option value="solid">Solid color</Option>
+        <Option value="gradient">Gradient</Option>
+      </Select>
+      </div>
       <Saturation hsva={hsva} onChange={updateHsva} />
-      <div className='react-colorful__controls'>
-        <div className='react-colorful__eyedropper'>
+      <div className='mp-color__controls'>
+        <div className='mp-color__eyedropper'>
           <ColorizeIcon
              style={{
               width: '18px',
@@ -47,7 +54,7 @@ export const AlphaColorPicker = <T extends AnyColor>({
         </div>
         <div style={{width: '100%'}}>
           <Hue hue={hsva.h} onChange={updateHsva} />
-          <Alpha hsva={hsva} onChange={updateHsva} className="react-colorful__last-control" />
+          <Alpha hsva={hsva} onChange={updateHsva} className="mp-color__last-control" />
         </div>
       </div>
     </div>

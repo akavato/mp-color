@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Pointer = ({ className, color, left, top = 0.5 }: Props): JSX.Element => {
-  const nodeClassName = formatClassName(["react-colorful__pointer", className]);
+  const nodeClassName = formatClassName(["mp-color__pointer", className]);
 
   const style = {
     top: `${top * 100}%`,
@@ -18,7 +18,7 @@ export const Pointer = ({ className, color, left, top = 0.5 }: Props): JSX.Eleme
 
   return (
     <div className={nodeClassName} style={style}>
-      <div className="react-colorful__pointer-fill" style={{ backgroundColor: color }} />
+      <div className="mp-color__pointer-fill" style={{ backgroundColor: color }} />
     </div>
   );
 };

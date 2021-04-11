@@ -121,7 +121,7 @@ const InteractiveBase = ({ onMove, onKey, ...rest }: Props) => {
   return (
     <div
       {...rest}
-      className="react-colorful__interactive"
+      className="mp-color__interactive"
       ref={container}
       onTouchStart={handleMoveStart}
       onMouseDown={handleMoveStart}

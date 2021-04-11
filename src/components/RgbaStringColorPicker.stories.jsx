@@ -1,5 +1,6 @@
 import React from 'react';
 import { RgbaStringColorPicker } from './RgbaStringColorPicker';
+import 'antd/dist/antd.css';
 
 export default {
   title: 'RgbaStringColorPicker',
